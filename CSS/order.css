@@ -1,0 +1,127 @@
+.squares {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .square-01,
+  .square-02,
+  .square-03 {
+    width: 80%;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 20px;
+  }
+
+  .square-01 {
+    height: calc(100vh - 300px);
+  }
+  .square-02 {
+    height: calc(100vh - 330px);
+  }
+  .square-03 {
+    height: calc(100vh - 250px);
+    margin-bottom: 20px;
+  }
+  #topic {
+    width: 100%;
+    height: 50px;
+    font-size: 25px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: rgb(88, 222, 124);
+    border-radius: 20px 20px 0 0;
+  }
+  .box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-left: 20px;
+
+  }
+  input[type="text"] {
+    height: 30px;
+    width: 80%;
+    border-radius: 10px;
+   border: 1px solid black;
+  }
+  #cusid {
+    height: 30px;
+    width: 80%;
+    border-radius: 10px;
+  }
+  .box-set {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 10px;
+  }
+  .box-set-1,
+  .box-set-2 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    row-gap: 10px;
+  }
+  .box-set-2 {
+  }
+  .Smallbox-set {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  .Smallbox {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    row-gap: 10px;
+    margin-left: 20px;
+  }
+  .squarebtn {
+    width: 134px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin: 30px 0;
+    font-size: 20px;
+    position: relative;
+    left: calc(100% - 200px);
+  }
+  table,
+  th,
+  td {
+    border: 2px solid #F5F5F7;
+    border-collapse: collapse;
+  }
+  table{
+    width: 95%;
+    height: auto;
+    margin: auto;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  th{
+    width: auto;
+    height: 40px;
+    font-size: 20px;
+    background-color: #96CEB4; 
+  }
+  tr{
+    width: auto;
+    height: 40px;
+  }
+  .AddItem{
+    background-color: red;
+  }
+  .purchase{
+    background-color: green;
+  }
