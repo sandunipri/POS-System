@@ -19,3 +19,91 @@
   background-color: rgb(88, 222, 124);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+  row-gap: 5px;
+}
+label {
+  font-size: 17px;
+}
+input[type="text"] {
+  width: 100%;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid black;
+  font-size: 15px;
+}
+input[type="TelNo"] {
+  width: 50%;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid black;
+  font-size: 15px;
+}
+.btn {
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid black;
+  font-size: 17px;
+  font-weight: bold;
+}
+.CusButton {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+  column-gap: 15px;
+  padding-top: 10px;
+}
+#save {
+  background-color: green;
+}
+#delete {
+  background-color: red;
+}
+#search {
+  background-color: blue;
+}
+#update {
+  background-color: yellow;
+}
+#getAll {
+  background-color: rgb(120, 15, 112);
+}
+#clear {
+  background-color: gray;
+}
+#Cusicon {
+  font-size: 30px;
+  padding-right: 15px;
+}
+#btnicon {
+  font-size: 20px;
+  padding-right: 7px;
+}
+table,
+th,
+td {
+  border: 2px solid #F5F5F7;
+  border-collapse: collapse;
+}
+table{
+  width: 95%;
+  height: auto;
+  margin: auto;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+th{
+  width: auto;
+  height: 40px;
+  font-size: 20px;
+  background-color: #96CEB4; 
+}
+tr{
+  width: auto;
+  height: 40px;
+}
