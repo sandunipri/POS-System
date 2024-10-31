@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pos-system</title>
+    <link rel="stylesheet" href="/CSS/style.css" />
+  </head>
+  <style>
+    #currentDate {
+      font-size: 50px;
+      font-weight: bold;
+      margin: 20px;
+      position: relative;
+      left: calc(100% - 300px);
+      margin: 0;
+      
+    }
+    #currentTime {
+      font-size: 30px;
+      font-weight: bold;
+      margin: 20px;
+      position: relative;
+      left: calc(100% - 290px);
+      margin: 0;
+    }
+  
+
+    .count-set {
+      width: 80%;
+      height: 200px;
+      display: flex;
+      flex-direction: row;
+
+      /* column-gap: 100px; */
+    }
+    .count {
+      width: 300px;
+      height: 170px;
+      /* border: 1px solid black;  */
+      background-color: aliceblue;
+      margin: auto;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      font-size: 35px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+      /* row-gap: 7px; */
+    }
+    #number{
+      margin-top: 15px;
+      font-size: 50px;
+    }
+    table,
+      th,
+      td {
+        border: 2px solid #F5F5F7;
+        border-collapse: collapse;
+        border: 1px solid black;
+      }
+      table{
+        width: 95%;
+        height: auto;
+        margin: auto;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        
+      }
+      th{
+        width: auto;
+        height: 30px;
+        font-size: 20px;
+        background-color: #96CEB4; 
+      }
+      tr{
+        width: auto;
+        height: 40px;
+      }
+      .table{
+        width: calc(100% - 80px);
+        height: auto;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        margin: auto;
+        margin-top: 20px;
+      }
+      .tableheader{
+        width: 100%;
+        height: 70px;
+        font-size: 20px;
+        background-color: #96CEB4;
+        font-size: 30px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #greet{
+        font-size: 50px;
+        font-weight: bold;
+        display: flex;
+        flex-direction: start;
+      }
+      .dateAndGreet{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 15px;
+        
+      }
+      #DateTime{
+        display: flex;
+        flex-direction: column;
+      }
+
+  </style>
+  <body>
+    <header>
+      <div class="content">
+        <div class="logoAndName">
+          <img
+            id="logo"
+            src="/assects/images/pos system image.png"
+            alt="pos logo"
+          />
+          <div id="name">POS System</div>
+        </div>
+        <nav class="nav">
+          <a href="/index.html">Home</a>
+          <a href="/pages/customer.html">Customers</a>
+          <a href="/pages/store.html">Store</a>
+          <a href="/pages/orders.html">Orders</a>
+        </nav>
+      </div>
+      <div>
+        <button id="login">sign up</button> <button id="login">log out</button>
+      </div>
+    </header>
+    <main>
+
+      <div class="dateAndGreet">
+        <div id="greet">Have a nice day !!</div>
+        <div id="DateTime">
+          <span id="currentDate"></span>
+          <span id="currentTime"></span>
+        </div>
+      </div>
+
+      <div class="count-set">
+        <div class="count"><span>Customer</span><span>Count </span><span id="number">09</span></div>
+        <div class="count"><span>Item</span><span>Count </span><span id="number">11</span></div>
+        <div class="count"><span>Today</span><span>Sales </span><span id="number">13</span></div>
+      </div>
+      <div class="table">
+        <div class="tableheader">Recent Orders</div>
+        <table>
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Customer Name</th>
+              <th>Item Name</th>
+              <th>Item QTY</th>
+              <th>Total Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John</td>
+              <td>Doe</td>
+              <td>25</td>
+              <td>1234567890</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>John</td>
+              <td>Doe</td>
+              <td>25</td>
+              <td>1234567890</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>John</td>
+              <td>Doe</td>
+              <td>25</td>
+              <td>1234567890</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Jane</td>
+              <td>Doe</td>
+              <td></td>
+              <td>1234567890</td>
+              <td></td>
+            </tr>
+          </tbody>
+      </div>
+    </main>
+    <script>
+      const today = new Date();
+      const formattedDate = today.toLocaleDateString();
+      document.getElementById("currentDate").textContent = formattedDate;
+
+      function updateTime() {
+        const now = new Date();
+        const formattedTime = now.toLocaleTimeString(); 
+        document.getElementById("currentTime").textContent = formattedTime;
+      }
+
+      updateTime();
+
+      setInterval(updateTime, 1000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>customer</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/CSS/style.css" />
+    <link rel="stylesheet" href="/CSS/page.css" />
+    <style>
+ 
+      .box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 10px;
+        row-gap: 5px;
+      }
+      label {
+        font-size: 17px;
+      }
+      input[type="text"] {
+        width: 100%;
+        height: 30px;
+        border-radius: 10px;
+        border: 1px solid black;
+        font-size: 15px;
+      }
+      input[type="TelNo"] {
+        width: 50%;
+        height: 30px;
+        border-radius: 10px;
+        border: 1px solid black;
+        font-size: 15px;
+      }
+      .btn {
+        width: 120px;
+        height: 40px;
+        border-radius: 10px;
+        border: 1px solid black;
+        font-size: 17px;
+        font-weight: bold;
+      }
+      .CusButton {
+        display: flex;
+        flex-direction: row;
+        margin: 20px;
+        column-gap: 15px;
+        padding-top: 10px;
+      }
+      #save {
+        background-color: green;
+      }
+      #delete {
+        background-color: red;
+      }
+      #search {
+        background-color: blue;
+      }
+      #update {
+        background-color: yellow;
+      }
+      #getAll {
+        background-color: rgb(120, 15, 112);
+      }
+      #clear {
+        background-color: gray;
+      }
+      #Cusicon {
+        font-size: 30px;
+        padding-right: 15px;
+      }
+      #btnicon {
+        font-size: 20px;
+        padding-right: 7px;
+      }
+ table,
+      th,
+      td {
+        border: 2px solid #F5F5F7;
+        border-collapse: collapse;
+      }
+      table{
+        width: 95%;
+        height: auto;
+        margin: auto;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      }
+      th{
+        width: auto;
+        height: 40px;
+        font-size: 20px;
+        background-color: #96CEB4; 
+      }
+      tr{
+        width: auto;
+        height: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="content">
+        <div class="logoAndName">
+          <img
+            id="logo"
+            src="/assects/images/pos system image.png"
+            alt="pos logo"
+          />
+          <div id="name">POS System</div>
+        </div>
+        <nav class="nav">
+          <a href="/index.html">Home</a>
+          <a href="/pages/customer.html">Customers</a>
+          <a href="/pages/store.html">Store</a>
+          <a href="/pages/orders.html">Orders</a>
+        </nav>
+      </div>
+      <div>
+        <button id="login">sign up</button> <button id="login">log out</button>
+      </div>
+    </header>
+    <main>
+      <div class="rectangle">
+        <div id="pageName">
+          <span id="Cusicon"><i class="fa-solid fa-users"></i></span
+          >Customer-Manage
+        </div>
+        <div class="box">
+          <label for="CustomerID">Customer ID :</label>
+          <input type="text" />
+        </div>
+        <div class="box">
+          <label for="CustomerNmae">Customer Name :</label>
+          <input type="text" />
+        </div>
+        <div class="box">
+          <label for="CustomerAddress">Customer Address :</label>
+          <input type="text" />
+        </div>
+        <div class="box">
+          <label for="CustomerTelNo">Customer TelNo :</label>
+          <input type="TelNo" />
+        </div>
+        <div class="CusButton">
+          <button class="btn" id="save">
+            <span id="btnicon"><i class="fa-solid fa-user"></i></span>Save
+          </button>
+          <button class="btn" id="update">
+            <span id="btnicon"><i class="fa-solid fa-pen-to-square"></i></span
+            >Update
+          </button>
+          <button class="btn" id="search">
+            <span id="btnicon"
+              ><i class="fa-solid fa-magnifying-glass"></i></span
+            >Search
+          </button>
+          <button class="btn" id="delete">
+            <span id="btnicon"><i class="fa-solid fa-trash-can"></i></span
+            >Delete
+          </button>
+          <button class="btn" id="getAll">
+            <span id="btnicon"><i class="fa-solid fa-reply-all"></i></span
+            >All
+          </button>
+          <button class="btn" id="clear">
+            <span id="btnicon"><i class="fa-solid fa-circle-check"></i></span
+            >Clear
+          </button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Customer ID</th>
+              <th>Customer Name</th>
+              <th>Cus Address</th>
+              <th>Customer TelNo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John</td>
+              <td>Doe</td>
+              <td>25</td>
+              <td>1234567890</td>
+            </tr>
+            <tr>
+              <td>Jane</td>
+              <td>Doe</td>
+              <td></td>
+              <td>1234567890</td>
+            </tr>
+          </tbody>
+      </div>
+      
+    </main>
+  </body>
+</html>
