@@ -14,7 +14,9 @@
     />
     <link rel="stylesheet" href="/CSS/style.css" />
     <link rel="stylesheet" href="/CSS/page.css" />
-    <style></style>
+    <style>
+
+    </style>
   </head>
   <body>
     <header>
@@ -33,9 +35,23 @@
           <a href="/pages/store.html">Store</a>
           <a href="/pages/orders.html">Orders</a>
         </nav>
+        <i class="fa fa-bars burger" id="burgerbtn" aria-hidden="true"></i>
       </div>
       <div>
         <button id="login">sign up</button> <button id="login">log out</button>
+      </div>
+      <div class="menu-list" id="menuList">
+        <button class="closebtn" id="closeBtn">&times;</button>
+        <nav class="menu">
+          <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/pages/customer.html">Customers</a></li>
+            <li><a href="/pages/store.html">Store</a></li>
+            <li><a href="/pages/orders.html">Orders</a></li>
+            <li><button id="login">sign up</button></li>
+            <li><button id="login">log out</button></li>
+          </ul>
+        </nav>
       </div>
     </header>
     <main>
@@ -111,5 +127,6 @@
         </table>
       </div>
     </main>
+    <script src="/js/index.js"></script>
   </body>
 </html>
