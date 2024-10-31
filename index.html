@@ -4,119 +4,816 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>pos-system</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <link rel="stylesheet" href="/CSS/style.css" />
+    <link rel="stylesheet" href="/CSS/index.css" />
   </head>
   <style>
-    #currentDate {
-      font-size: 50px;
-      font-weight: bold;
-      margin: 20px;
-      position: relative;
-      left: calc(100% - 300px);
-      margin: 0;
-      
-    }
-    #currentTime {
+    #burgerbtn {
+      display: none;
+      color: black;
       font-size: 30px;
-      font-weight: bold;
-      margin: 20px;
-      position: relative;
-      left: calc(100% - 290px);
-      margin: 0;
+      cursor: pointer;
+      transform: translateY(-50%);
     }
-  
-
-    .count-set {
-      width: 80%;
-      height: 200px;
-      display: flex;
-      flex-direction: row;
-
-      /* column-gap: 100px; */
-    }
-    .count {
+    .menu-list {
+      background-color: black;
+      color: white;
+      position: fixed;
+      top: 0;
+      right: -100%;
       width: 300px;
-      height: 170px;
-      /* border: 1px solid black;  */
-      background-color: aliceblue;
-      margin: auto;
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-      font-size: 35px;
+      height: 100vh;
+      z-index: 2;
+      transition: right 0.4s ease;
+    }
+
+    .menu {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin-top: 10px;
-      /* row-gap: 7px; */
+      row-gap: 20px;
+      padding-top: 20px;
     }
-    #number{
-      margin-top: 15px;
-      font-size: 50px;
+    .closebtn {
+      background-color: transparent;
+      color: white;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+
     }
-    table,
+    .menu ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    .menu li {
+      padding: 10px;
+    }
+    .menu a {
+      color: white;
+      text-decoration: none;
+    }
+    .menu a:hover {
+      text-decoration: underline;
+    }
+    @media screen and (min-width: 0px) and (max-width: 320px) {
+      body {
+        height: auto !important;
+      }
+      main {
+        width: 100%;
+        height: 100%;
+      }
+      .content {
+        width: 100%;
+        display: flex;
+        padding: 0 10px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .nav {
+        display: none;
+      }
+      #name {
+        font-size: 25px;
+      }
+      #login {
+        display: none;
+      }
+      #burgerbtn {
+        display: block;
+      }
+      .menu-list.active {
+        right: 0px;
+      }
+      #burgerbtn {
+        font-size: 20px;
+      }
+      #logo {
+        display: none;
+      }
+
+      #currentDate {
+        font-size: 30px;
+        margin: 20px;
+        position: relative;
+        left: calc(100% - 200px);
+        margin: 0;
+      }
+      #currentTime {
+        font-size: 20px;
+        font-weight: bold;
+        margin: 20px;
+        position: relative;
+        left: calc(100% - 195px);
+        margin: 0;
+        z-index: 133333333333333333;
+      }
+
+      .count-set {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+
+        /* column-gap: 100px; */
+      }
+      .count {
+        width: 250px;
+        height: 170px;
+        border-radius: 20px;
+        font-size: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+      }
+      #number {
+        margin-top: 15px;
+        font-size: 20px;
+      }
+      table,
       th,
       td {
-        border: 2px solid #F5F5F7;
         border-collapse: collapse;
-        border: 1px solid black;
       }
-      table{
-        width: 95%;
+      table {
+        width: 100%;
         height: auto;
-        margin: auto;
+
         text-align: center;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        
+        margin-bottom: 10px;
       }
-      th{
+      th {
         width: auto;
         height: 30px;
-        font-size: 20px;
-        background-color: #96CEB4; 
+        font-size: 10px;
       }
-      tr{
+      tr {
         width: auto;
         height: 40px;
       }
-      .table{
-        width: calc(100% - 80px);
+      .table {
+        width: calc(100% - 20px);
         height: auto;
         text-align: center;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        margin: auto;
-        margin-top: 20px;
       }
-      .tableheader{
+      .tableheader {
         width: 100%;
-        height: 70px;
-        font-size: 20px;
-        background-color: #96CEB4;
+        height: 40px;
+        font-size: 13px;
+        background-color: #96ceb4;
         font-size: 30px;
         font-weight: bold;
         display: flex;
         align-items: center;
         justify-content: center;
       }
-      #greet{
-        font-size: 50px;
-        font-weight: bold;
+      #greet {
+        font-size: 30px;
         display: flex;
         flex-direction: start;
       }
-      .dateAndGreet{
+      .dateAndGreet {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
         margin: 15px;
-        
       }
-      #DateTime{
+      #DateTime {
+        height: fit-content;
         display: flex;
         flex-direction: column;
       }
+    }
+    @media screen and (min-width: 320px) and (max-width: 375px) {
+      body {
+        height: auto !important;
+      }
+      header{
 
+      }
+      .content {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0 10px;
+        justify-content: space-between;
+      }
+      main {
+        width: 100%;
+        height: 100%;
+      }
+      .nav {
+        display: none;
+      }
+      #name {
+        font-size: 25px;
+      }
+      #login {
+        display: none;
+      }
+      #burgerbtn {
+        display: block;
+      }
+      .menu-list.active {
+        right: 0px;
+      }
+      #burgerbtn {
+        font-size: 20px;
+      }
+      #logo {
+        display: none;
+      }
+
+      #currentDate {
+        font-size: 30px;
+        margin: 20px;
+        position: relative;
+        left: calc(100% - 200px);
+        margin: 0;
+      }
+      #currentTime {
+        font-size: 20px;
+        font-weight: bold;
+        margin: 20px;
+        position: relative;
+        left: calc(100% - 195px);
+        margin: 0;
+        z-index: 133333333333333333;
+      }
+
+      .count-set {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+
+        /* column-gap: 100px; */
+      }
+      .count {
+        width: 300px;
+        height: 170px;
+        
+        border-radius: 20px;
+        font-size: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+      }
+      #number {
+        margin-top: 15px;
+        font-size: 20px;
+      }
+      table,
+      th,
+      td {
+        border-collapse: collapse;
+      }
+      table {
+        width: 100%;
+        height: auto;
+        
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      th {
+        width: auto;
+        height: 30px;
+        font-size: 10px;
+      }
+      tr {
+        width: auto;
+        height: 40px;
+      }
+      .table {
+        width: calc(100% - 20px);
+        height: auto;
+        text-align: center;
+        
+      }
+      .tableheader {
+        width: 100%;
+        height: 40px;
+        font-size: 13px;
+        background-color: #96ceb4;
+        font-size: 30px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #greet {
+        font-size: 30px;
+        display: flex;
+        flex-direction: start;
+      }
+      .dateAndGreet {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 15px;
+      }
+      #DateTime {
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    @media screen and (min-width: 375px) and (max-width: 426px) {
+      body {
+        height: auto !important;
+      }
+      .content {
+        width: 100%;
+        display: flex;
+        padding: 0 10px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+      main {
+        width: 100%;
+        height: 100%;
+      }
+      .nav {
+        display: none;
+      }
+      #name {
+        font-size: 25px;
+      }
+      #login {
+        display: none;
+      }
+      #burgerbtn {
+        display: block;
+      }
+      .menu-list.active {
+        right: 0px;
+      }
+      #burgerbtn {
+        font-size: 20px;
+      }
+      #logo {
+        display: none;
+      }
+
+      #currentDate {
+        font-size: 30px;
+        margin: 20px;
+        position: relative;
+        left: calc(100% - 160px);
+        margin: 0;
+      }
+      #currentTime {
+        font-size: 20px;
+        font-weight: bold;
+        margin: 20px;
+        position: relative;
+        left: calc(100% - 140px);
+        margin: 0;
+        z-index: 133333333333333333;
+      }
+
+      .count-set {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+
+        /* column-gap: 100px; */
+      }
+      .count {
+        width: 350px;
+        height: 170px;
+       
+        border-radius: 20px;
+        font-size: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+      }
+      #number {
+        margin-top: 15px;
+        font-size: 25px;
+      }
+      table,
+      th,
+      td {
+        border-collapse: collapse;
+      }
+      table {
+        width: 100%;
+        height: auto;
+        
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      th {
+        width: auto;
+        height: 30px;
+        font-size: 10px;
+      }
+      tr {
+        width: auto;
+        height: 40px;
+      }
+      .table {
+        width: calc(100% - 20px);
+        height: auto;
+        text-align: center;
+       
+      }
+      .tableheader {
+        width: 100%;
+        height: 40px;
+        font-size: 13px;
+        background-color: #96ceb4;
+        font-size: 30px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #greet {
+        font-size: 35px;
+        display: flex;
+        flex-direction: start;
+      }
+      .dateAndGreet {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 15px;
+      }
+      #DateTime {
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    @media screen and (min-width: 426px) and (max-width: 769px) {
+      .content {
+        width: 100%;
+        display: flex;
+        padding: 0 10px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 10px;
+      }
+      body {
+        height: auto !important;
+      }
+      main {
+        width: 100%;
+        height: 100%;
+      }
+      .nav {
+        display: none;
+      }
+      #name {
+        font-size: 25px;
+      }
+      #login {
+        display: none;
+      }
+      #burgerbtn {
+        display: block;
+      }
+      .menu-list.active {
+        right: 0px;
+      }
+      #burgerbtn {
+        font-size: 20px;
+      }
+      #logo {
+        display: none;
+      }
+
+      #currentDate {
+        font-size: 35px;
+        margin: 20px;
+        position: relative;
+        left: calc(100% - 180px);
+        margin: 0;
+      }
+      #currentTime {
+        font-size: 25px;
+        font-weight: bold;
+        margin: 20px;
+        position: relative;
+        left: calc(100% - 160px);
+        margin: 0;
+        z-index: 133333333333333333;
+      }
+
+      .count-set {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+
+        /* column-gap: 100px; */
+      }
+      .count {
+        width: 240px;
+        height: 150px;
+        margin: auto;
+        border-radius: 20px;
+        font-size: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+      }
+      #number {
+        margin-top: 15px;
+        font-size: 25px;
+      }
+      table,
+      th,
+      td {
+        border-collapse: collapse;
+      }
+      table {
+        width: 100%;
+        height: auto;
+        margin: auto;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      th {
+        width: auto;
+        height: 30px;
+        font-size: 10px;
+      }
+      tr {
+        width: auto;
+        height: 40px;
+      }
+      .table {
+        width: calc(100% - 20px);
+        height: auto;
+        text-align: center;
+        padding: 10px;
+      }
+      .tableheader {
+        width: 100%;
+        height: 40px;
+        font-size: 13px;
+        background-color: #96ceb4;
+        font-size: 30px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #greet {
+        font-size: 40px;
+        display: flex;
+        flex-direction: start;
+      }
+      .dateAndGreet {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 15px;
+      }
+      #DateTime {
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    @media screen and (min-width: 769px) and (max-width: 1024px) {
+      body {
+        height: auto !important;
+      }
+      main {
+        width: 100%;
+        height: 100%;
+      }
+
+      #currentDate {
+        font-size: 35px;
+        margin: 20px;
+        position: relative;
+        left: calc(100% - 180px);
+        margin: 0;
+      }
+      #currentTime {
+        font-size: 25px;
+        font-weight: bold;
+        margin: 20px;
+        position: relative;
+        left: calc(100% - 160px);
+        margin: 0;
+        z-index: 133333333333333333;
+      }
+
+      .count-set {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+
+        /* column-gap: 100px; */
+      }
+      .count {
+        width: 240px;
+        height: 150px;
+        margin: auto;
+        border-radius: 20px;
+        font-size: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+      }
+      #number {
+        margin-top: 15px;
+        font-size: 25px;
+      }
+      table,
+      th,
+      td {
+        border-collapse: collapse;
+      }
+      table {
+        width: 100%;
+        height: auto;
+        margin: auto;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      th {
+        width: auto;
+        height: 30px;
+        font-size: 10px;
+      }
+      tr {
+        width: auto;
+        height: 40px;
+      }
+      .table {
+        width: calc(100% - 20px);
+        height: auto;
+        text-align: center;
+        padding: 10px;
+      }
+      .tableheader {
+        width: 100%;
+        height: 40px;
+        font-size: 13px;
+        background-color: #96ceb4;
+        font-size: 30px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #greet {
+        font-size: 40px;
+        display: flex;
+        flex-direction: start;
+      }
+      .dateAndGreet {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 15px;
+      }
+      #DateTime {
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    @media screen and (min-width: 1024px) and (max-width: 1440px) {
+      body {
+        height: auto !important;
+      }
+      main {
+        width: 100%;
+        height: 100%;
+      }
+
+      #currentDate {
+        font-size: 35px;
+        margin: 20px;
+        position: relative;
+        left: calc(100% - 180px);
+        margin: 0;
+      }
+      #currentTime {
+        font-size: 25px;
+        font-weight: bold;
+        margin: 20px;
+        position: relative;
+        left: calc(100% - 160px);
+        margin: 0;
+        z-index: 133333333333333333;
+      }
+
+      .count-set {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+
+        /* column-gap: 100px; */
+      }
+      .count {
+        width: 240px;
+        height: 150px;
+        margin: auto;
+        border-radius: 20px;
+        font-size: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+      }
+      #number {
+        margin-top: 15px;
+        font-size: 25px;
+      }
+      table,
+      th,
+      td {
+        border-collapse: collapse;
+      }
+      table {
+        width: 100%;
+        height: auto;
+        margin: auto;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      th {
+        width: auto;
+        height: 30px;
+        font-size: 10px;
+      }
+      tr {
+        width: auto;
+        height: 40px;
+      }
+      .table {
+        width: calc(100% - 20px);
+        height: auto;
+        text-align: center;
+        padding: 10px;
+      }
+      .tableheader {
+        width: 100%;
+        height: 40px;
+        font-size: 13px;
+        background-color: #96ceb4;
+        font-size: 30px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #greet {
+        font-size: 40px;
+        display: flex;
+        flex-direction: start;
+      }
+      .dateAndGreet {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 15px;
+      }
+      #DateTime {
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+      }
+    }
   </style>
   <body>
     <header>
@@ -135,13 +832,29 @@
           <a href="/pages/store.html">Store</a>
           <a href="/pages/orders.html">Orders</a>
         </nav>
+        <i class="fa fa-bars burger" id="burgerbtn" aria-hidden="true"></i>
       </div>
+
       <div>
         <button id="login">sign up</button> <button id="login">log out</button>
       </div>
+
+      <!-- burger button -->
+      <div class="menu-list" id="menuList">
+        <button class="closebtn" id="closeBtn">&times;</button>
+        <nav class="menu">
+          <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/pages/customer.html">Customers</a></li>
+            <li><a href="/pages/store.html">Store</a></li>
+            <li><a href="/pages/orders.html">Orders</a></li>
+            <li><button id="login">sign up</button></li>
+            <li><button id="login">log out</button></li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <main>
-
       <div class="dateAndGreet">
         <div id="greet">Have a nice day !!</div>
         <div id="DateTime">
@@ -151,9 +864,15 @@
       </div>
 
       <div class="count-set">
-        <div class="count"><span>Customer</span><span>Count </span><span id="number">09</span></div>
-        <div class="count"><span>Item</span><span>Count </span><span id="number">11</span></div>
-        <div class="count"><span>Today</span><span>Sales </span><span id="number">13</span></div>
+        <div class="count">
+          <span>Customer</span><span>Count </span><span id="number">09</span>
+        </div>
+        <div class="count">
+          <span>Item</span><span>Count </span><span id="number">11</span>
+        </div>
+        <div class="count">
+          <span>Today</span><span>Sales </span><span id="number">13</span>
+        </div>
       </div>
       <div class="table">
         <div class="tableheader">Recent Orders</div>
@@ -197,6 +916,7 @@
               <td></td>
             </tr>
           </tbody>
+        </table>
       </div>
     </main>
     <script>
@@ -206,7 +926,7 @@
 
       function updateTime() {
         const now = new Date();
-        const formattedTime = now.toLocaleTimeString(); 
+        const formattedTime = now.toLocaleTimeString();
         document.getElementById("currentTime").textContent = formattedTime;
       }
 
@@ -214,5 +934,6 @@
 
       setInterval(updateTime, 1000);
     </script>
+    <script src="/js/index.js"></script>
   </body>
 </html>
