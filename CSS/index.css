@@ -27,7 +27,7 @@
     width: 300px;
     height: 170px;
     /* border: 1px solid black;  */
-    background-color: aliceblue;
+    background-color: #73EC8B;
     margin: auto;
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
@@ -104,10 +104,14 @@
     justify-content: space-between;
     align-items: center;
     margin: 15px;
+    /* background-color: #D2FF72; */
   }
   #DateTime {
     display: flex;
     flex-direction: column;
+  }
+  body{
+    background-color: #F5EFFF;
   }
  
   @media screen and (min-width: 0px) and (max-width: 320px) {
