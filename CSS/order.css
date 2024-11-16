@@ -18,7 +18,7 @@
     height: calc(100vh - 300px);
   }
   .square-02 {
-    height: calc(100vh - 330px);
+    height: calc(100vh - 300px);
   }
   .square-03 {
     height: calc(100vh - 250px);
@@ -251,9 +251,7 @@
     #topic {
       font-size: 20px;
     }
-    /* input[type="text"]{
-      font-size: 10px;
-    } */
+
     label {
       font-size: 13px;
     }
@@ -331,9 +329,7 @@
     #topic {
       font-size: 20px;
     }
-    /* input[type="text"]{
-      font-size: 10px;
-    } */
+
     label {
       font-size: 13px;
     }
@@ -412,9 +408,7 @@
     #topic {
       font-size: 20px;
     }
-    /* input[type="text"]{
-      font-size: 10px;
-    } */
+   
     label {
       font-size: 13px;
     }
@@ -465,9 +459,7 @@
     #topic {
       font-size: 20px;
     }
-    /* input[type="text"]{
-      font-size: 10px;
-    } */
+ 
     label {
       font-size: 13px;
     }
@@ -534,9 +526,7 @@
     #topic {
       font-size: 20px;
     }
-    /* input[type="text"]{
-      font-size: 10px;
-    } */
+
     label {
       font-size: 13px;
     }

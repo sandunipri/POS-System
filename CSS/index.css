@@ -1,90 +1,222 @@
 #currentDate {
-    font-size: 50px;
-    font-weight: bold;
+  font-size: 50px;
+  font-weight: bold;
+  margin: 20px;
+  position: relative;
+  left: calc(100% - 300px);
+  margin: 0;
+}
+#currentTime {
+  font-size: 30px;
+  font-weight: bold;
+  /* margin: 20px; */
+  position: relative;
+  left: calc(100% - 290px);
+  margin: 0;
+}
+
+.count-set {
+  width: 80%;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+
+  /* column-gap: 100px; */
+}
+.count {
+  width: 300px;
+  height: 170px;
+  /* border: 1px solid black;  */
+  background-color: #73ec8b;
+  margin: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  font-size: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  /* row-gap: 7px; */
+}
+#number {
+  margin-top: 15px;
+  font-size: 50px;
+}
+table,
+th,
+td {
+  border: 2px solid #f5f5f7;
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+table {
+  width: 95%;
+  height: auto;
+  margin: auto;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+th {
+  width: auto;
+  height: 30px;
+  font-size: 20px;
+  background-color: #96ceb4;
+}
+tr {
+  width: auto;
+  height: 40px;
+}
+.table {
+  width: calc(100% - 80px);
+  height: auto;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: auto;
+  margin-top: 20px;
+}
+.tableContent {
+  width: 100%;
+  overflow-y: auto;
+}
+.tableheader {
+  width: 100%;
+  height: 70px;
+  font-size: 20px;
+  background-color: #96ceb4;
+  font-size: 30px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#greet {
+  font-size: 50px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: start;
+}
+.dateAndGreet {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px;
+  /* background-color: #D2FF72; */
+}
+#DateTime {
+  display: flex;
+  flex-direction: column;
+}
+body {
+  background-color: #f5efff;
+}
+
+@media screen and (min-width: 0px) and (max-width: 320px) {
+  body {
+    height: auto !important;
+  }
+  main {
+    width: 100%;
+    height: 100%;
+  }
+  .content {
+    width: 100%;
+    display: flex;
+    padding: 0 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav {
+    display: none;
+  }
+  #name {
+    font-size: 25px;
+  }
+  #login {
+    display: none;
+  }
+  #burgerbtn {
+    display: block;
+  }
+  .menu-list.active {
+    right: 0px;
+  }
+  #burgerbtn {
+    font-size: 20px;
+  }
+
+  #currentDate {
+    font-size: 30px;
     margin: 20px;
     position: relative;
-    left: calc(100% - 300px);
+    left: calc(100% - 200px);
     margin: 0;
   }
   #currentTime {
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
     margin: 20px;
     position: relative;
-    left: calc(100% - 290px);
+    left: calc(100% - 195px);
     margin: 0;
+    z-index: 133333333333333333;
   }
 
   .count-set {
-    width: 80%;
-    height: 200px;
+    width: 100%;
+    height: auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
-    /* column-gap: 100px; */
+
   }
   .count {
-    width: 300px;
+    width: 250px;
     height: 170px;
-    /* border: 1px solid black;  */
-    background-color: #73EC8B;
-    margin: auto;
     border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    font-size: 35px;
+    font-size: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 10px;
-    /* row-gap: 7px; */
   }
   #number {
     margin-top: 15px;
-    font-size: 50px;
+    font-size: 20px;
   }
   table,
   th,
   td {
-    border: 2px solid #f5f5f7;
     border-collapse: collapse;
-    border: 1px solid black;
   }
   table {
-    width: 95%;
+    width: 100%;
     height: auto;
-    margin: auto;
+
     text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    
+    margin-bottom: 10px;
   }
   th {
     width: auto;
     height: 30px;
-    font-size: 20px;
-    background-color: #96ceb4;
+    font-size: 10px;
   }
   tr {
     width: auto;
     height: 40px;
   }
   .table {
-    width: calc(100% - 80px);
+    width: calc(100% - 20px);
     height: auto;
     text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    margin: auto;
-    margin-top: 20px;
-    
-  }
-  .tableContent {
-    width: 100%;
-    overflow-y: auto;
   }
   .tableheader {
     width: 100%;
-    height: 70px;
-    font-size: 20px;
+    height: 40px;
+    font-size: 13px;
     background-color: #96ceb4;
     font-size: 30px;
     font-weight: bold;
@@ -93,814 +225,658 @@
     justify-content: center;
   }
   #greet {
-    font-size: 50px;
-    font-weight: bold;
+    font-size: 30px;
     display: flex;
     flex-direction: start;
   }
   .dateAndGreet {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     margin: 15px;
-    /* background-color: #D2FF72; */
   }
   #DateTime {
+    height: fit-content;
     display: flex;
     flex-direction: column;
   }
-  body{
-    background-color: #F5EFFF;
+}
+@media screen and (min-width: 320px) and (max-width: 375px) {
+  body {
+    height: auto !important;
   }
- 
-  @media screen and (min-width: 0px) and (max-width: 320px) {
-    body {
-      height: auto !important;
-    }
-    main {
-      width: 100%;
-      height: 100%;
-    }
-    .content {
-      width: 100%;
-      display: flex;
-      padding: 0 10px;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .nav {
-      display: none;
-    }
-    #name {
-      font-size: 25px;
-    }
-    #login {
-      display: none;
-    }
-    #burgerbtn {
-      display: block;
-    }
-    .menu-list.active {
-      right: 0px;
-    }
-    #burgerbtn {
-      font-size: 20px;
-    }
-
-
-    #currentDate {
-      font-size: 30px;
-      margin: 20px;
-      position: relative;
-      left: calc(100% - 200px);
-      margin: 0;
-    }
-    #currentTime {
-      font-size: 20px;
-      font-weight: bold;
-      margin: 20px;
-      position: relative;
-      left: calc(100% - 195px);
-      margin: 0;
-      z-index: 133333333333333333;
-    }
-
-    .count-set {
-      width: 100%;
-      height: auto;
-      display: flex;
-      flex-direction: column;
-
-      /* column-gap: 100px; */
-    }
-    .count {
-      width: 250px;
-      height: 170px;
-      border-radius: 20px;
-      font-size: 25px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin-top: 10px;
-    }
-    #number {
-      margin-top: 15px;
-      font-size: 20px;
-    }
-    table,
-    th,
-    td {
-      border-collapse: collapse;
-    }
-    table {
-      width: 100%;
-      height: auto;
-
-      text-align: center;
-      margin-bottom: 10px;
-    }
-    th {
-      width: auto;
-      height: 30px;
-      font-size: 10px;
-    }
-    tr {
-      width: auto;
-      height: 40px;
-    }
-    .table {
-      width: calc(100% - 20px);
-      height: auto;
-      text-align: center;
-    }
-    .tableheader {
-      width: 100%;
-      height: 40px;
-      font-size: 13px;
-      background-color: #96ceb4;
-      font-size: 30px;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    #greet {
-      font-size: 30px;
-      display: flex;
-      flex-direction: start;
-    }
-    .dateAndGreet {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin: 15px;
-    }
-    #DateTime {
-      height: fit-content;
-      display: flex;
-      flex-direction: column;
-    }
+  header {
   }
-  @media screen and (min-width: 320px) and (max-width: 375px) {
-    body {
-      height: auto !important;
-    }
-    header{
-
-    }
-    .content {
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      padding: 0 10px;
-      justify-content: space-between;
-    }
-    main {
-      width: 100%;
-      height: 100%;
-    }
-    .nav {
-      display: none;
-    }
-    #name {
-      font-size: 25px;
-    }
-    #login {
-      display: none;
-    }
-    #burgerbtn {
-      display: block;
-    }
-    .menu-list.active {
-      right: 0px;
-    }
-    #burgerbtn {
-      font-size: 20px;
-    }
- 
-
-    #currentDate {
-      font-size: 30px;
-      margin: 20px;
-      position: relative;
-      left: calc(100% - 200px);
-      margin: 0;
-    }
-    #currentTime {
-      font-size: 20px;
-      font-weight: bold;
-      margin: 20px;
-      position: relative;
-      left: calc(100% - 195px);
-      margin: 0;
-      z-index: 133333333333333333;
-    }
-
-    .count-set {
-      width: 100%;
-      height: auto;
-      display: flex;
-      flex-direction: column;
-
-      /* column-gap: 100px; */
-    }
-    .count {
-      width: 300px;
-      height: 170px;
-      
-      border-radius: 20px;
-      font-size: 25px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin-top: 10px;
-    }
-    #number {
-      margin-top: 15px;
-      font-size: 20px;
-    }
-    table,
-    th,
-    td {
-      border-collapse: collapse;
-    }
-    table {
-      width: 100%;
-      height: auto;
-      
-      text-align: center;
-      margin-bottom: 10px;
-    }
-    th {
-      width: auto;
-      height: 30px;
-      font-size: 10px;
-    }
-    tr {
-      width: auto;
-      height: 40px;
-    }
-    .table {
-      width: calc(100% - 20px);
-      height: auto;
-      text-align: center;
-      
-    }
-    .tableheader {
-      width: 100%;
-      height: 40px;
-      font-size: 13px;
-      background-color: #96ceb4;
-      font-size: 30px;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    #greet {
-      font-size: 30px;
-      display: flex;
-      flex-direction: start;
-    }
-    .dateAndGreet {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin: 15px;
-    }
-    #DateTime {
-      height: fit-content;
-      display: flex;
-      flex-direction: column;
-    }
+  .content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 10px;
+    justify-content: space-between;
   }
-  @media screen and (min-width: 375px) and (max-width: 426px) {
-    body {
-      height: auto !important;
-    }
-    .content {
-      width: 100%;
-      display: flex;
-      padding: 0 10px;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-    }
-    main {
-      width: 100%;
-      height: 100%;
-    }
-    .nav {
-      display: none;
-    }
-    #name {
-      font-size: 25px;
-    }
-    #login {
-      display: none;
-    }
-    #burgerbtn {
-      display: block;
-    }
-    .menu-list.active {
-      right: 0px;
-    }
-    #burgerbtn {
-      font-size: 20px;
-    }
-
-
-    #currentDate {
-      font-size: 30px;
-      margin: 20px;
-      position: relative;
-      left: calc(100% - 160px);
-      margin: 0;
-    }
-    #currentTime {
-      font-size: 20px;
-      font-weight: bold;
-      margin: 20px;
-      position: relative;
-      left: calc(100% - 140px);
-      margin: 0;
-      z-index: 133333333333333333;
-    }
-
-    .count-set {
-      width: 100%;
-      height: auto;
-      display: flex;
-      flex-direction: column;
-
-      /* column-gap: 100px; */
-    }
-    .count {
-      width: 350px;
-      height: 170px;
-     
-      border-radius: 20px;
-      font-size: 30px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin-top: 10px;
-    }
-    #number {
-      margin-top: 15px;
-      font-size: 25px;
-    }
-    table,
-    th,
-    td {
-      border-collapse: collapse;
-    }
-    table {
-      width: 100%;
-      height: auto;
-      
-      text-align: center;
-      margin-bottom: 10px;
-    }
-    th {
-      width: auto;
-      height: 30px;
-      font-size: 10px;
-    }
-    tr {
-      width: auto;
-      height: 40px;
-    }
-    .table {
-      width: calc(100% - 20px);
-      height: auto;
-      text-align: center;
-     
-    }
-    .tableheader {
-      width: 100%;
-      height: 40px;
-      font-size: 13px;
-      background-color: #96ceb4;
-      font-size: 30px;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    #greet {
-      font-size: 35px;
-      display: flex;
-      flex-direction: start;
-    }
-    .dateAndGreet {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin: 15px;
-    }
-    #DateTime {
-      height: fit-content;
-      display: flex;
-      flex-direction: column;
-    }
+  main {
+    width: 100%;
+    height: 100%;
   }
-  @media screen and (min-width: 426px) and (max-width: 769px) {
-    .content {
-      width: 100%;
-      display: flex;
-      padding: 0 10px;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 10px;
-    }
-    body {
-      height: auto !important;
-    }
-    main {
-      width: 100%;
-      height: 100%;
-    }
-    .nav {
-      display: none;
-    }
-    #name {
-      font-size: 25px;
-    }
-    #login {
-      display: none;
-    }
-    #burgerbtn {
-      display: block;
-    }
-    .menu-list.active {
-      right: 0px;
-    }
-    #burgerbtn {
-      font-size: 20px;
-    }
-
-
-    #currentDate {
-      font-size: 35px;
-      margin: 20px;
-      position: relative;
-      left: calc(100% - 180px);
-      margin: 0;
-    }
-    #currentTime {
-      font-size: 25px;
-      font-weight: bold;
-      margin: 20px;
-      position: relative;
-      left: calc(100% - 160px);
-      margin: 0;
-      z-index: 133333333333333333;
-    }
-
-    .count-set {
-      width: 100%;
-      height: auto;
-      display: flex;
-      flex-direction: row;
-
-      /* column-gap: 100px; */
-    }
-    .count {
-      width: 240px;
-      height: 150px;
-      margin: auto;
-      border-radius: 20px;
-      font-size: 30px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin-top: 10px;
-    }
-    #number {
-      margin-top: 15px;
-      font-size: 25px;
-    }
-    table,
-    th,
-    td {
-      border-collapse: collapse;
-    }
-    table {
-      width: 100%;
-      height: auto;
-      margin: auto;
-      text-align: center;
-      margin-bottom: 10px;
-    }
-    th {
-      width: auto;
-      height: 30px;
-      font-size: 10px;
-    }
-    tr {
-      width: auto;
-      height: 40px;
-    }
-    .table {
-      width: calc(100% - 20px);
-      height: auto;
-      text-align: center;
-      padding: 10px;
-    }
-    .tableheader {
-      width: 100%;
-      height: 40px;
-      font-size: 13px;
-      background-color: #96ceb4;
-      font-size: 30px;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    #greet {
-      font-size: 40px;
-      display: flex;
-      flex-direction: start;
-    }
-    .dateAndGreet {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin: 15px;
-    }
-    #DateTime {
-      height: fit-content;
-      display: flex;
-      flex-direction: column;
-    }
+  .nav {
+    display: none;
   }
-  @media screen and (min-width: 769px) and (max-width: 1024px) {
-    body {
-      height: auto !important;
-    }
-    main {
-      width: 100%;
-      height: 100%;
-    }
-
-    #currentDate {
-      font-size: 35px;
-      margin: 20px;
-      position: relative;
-      left: calc(100% - 180px);
-      margin: 0;
-    }
-    #currentTime {
-      font-size: 25px;
-      font-weight: bold;
-      margin: 20px;
-      position: relative;
-      left: calc(100% - 160px);
-      margin: 0;
-      z-index: 133333333333333333;
-    }
-
-    .count-set {
-      width: 100%;
-      height: auto;
-      display: flex;
-      flex-direction: row;
-
-      /* column-gap: 100px; */
-    }
-    .count {
-      width: 240px;
-      height: 150px;
-      margin: auto;
-      border-radius: 20px;
-      font-size: 30px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin-top: 10px;
-    }
-    #number {
-      margin-top: 15px;
-      font-size: 25px;
-    }
-    table,
-    th,
-    td {
-      border-collapse: collapse;
-    }
-    table {
-      width: 100%;
-      height: auto;
-      margin: auto;
-      text-align: center;
-      margin-bottom: 10px;
-    }
-    th {
-      width: auto;
-      height: 30px;
-      font-size: 10px;
-    }
-    tr {
-      width: auto;
-      height: 40px;
-    }
-    .table {
-      width: calc(100% - 20px);
-      height: auto;
-      text-align: center;
-      padding: 10px;
-    }
-    .tableheader {
-      width: 100%;
-      height: 40px;
-      font-size: 13px;
-      background-color: #96ceb4;
-      font-size: 30px;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    #greet {
-      font-size: 40px;
-      display: flex;
-      flex-direction: start;
-    }
-    .dateAndGreet {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin: 15px;
-    }
-    #DateTime {
-      height: fit-content;
-      display: flex;
-      flex-direction: column;
-    }
-    
-     
-    .nav a {
-       
-      font-size: 17px;
-    
-    }
-    #logo {
-      width: 80px;
-      height: 50px;
-      padding-right: 10px;
-    }
-    #name {
-      font-size: 20px;
-    
-    }
-    #login {
-      width: 100px;
-      height: 40px;
-      font-size: 15px;
-     
-    }
+  #name {
+    font-size: 25px;
   }
-  @media screen and (min-width: 1024px) and (max-width: 1440px) {
-    body {
-      height: auto !important;
-    }
-    main {
-      width: 100%;
-      height: 100%;
-    }
-
-    #currentDate {
-      font-size: 35px;
-      margin: 20px;
-      position: relative;
-      left: calc(100% - 180px);
-      margin: 0;
-    }
-    #currentTime {
-      font-size: 25px;
-      font-weight: bold;
-      margin: 20px;
-      position: relative;
-      left: calc(100% - 160px);
-      margin: 0;
-      z-index: 133333333333333333;
-    }
-
-    .count-set {
-      width: 100%;
-      height: auto;
-      display: flex;
-      flex-direction: row;
-
-      /* column-gap: 100px; */
-    }
-    .count {
-      width: 240px;
-      height: 150px;
-      margin: auto;
-      border-radius: 20px;
-      font-size: 30px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin-top: 10px;
-    }
-    #number {
-      margin-top: 15px;
-      font-size: 25px;
-    }
-    table,
-    th,
-    td {
-      border-collapse: collapse;
-    }
-    table {
-      width: 100%;
-      height: auto;
-      margin: auto;
-      text-align: center;
-      margin-bottom: 10px;
-    }
-    th {
-      width: auto;
-      height: 30px;
-      font-size: 10px;
-    }
-    tr {
-      width: auto;
-      height: 40px;
-    }
-    .table {
-      width: calc(100% - 20px);
-      height: auto;
-      text-align: center;
-      padding: 10px;
-    }
-    .tableheader {
-      width: 100%;
-      height: 40px;
-      font-size: 13px;
-      background-color: #96ceb4;
-      font-size: 30px;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    #greet {
-      font-size: 40px;
-      display: flex;
-      flex-direction: start;
-    }
-    .dateAndGreet {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin: 15px;
-    }
-    #DateTime {
-      height: fit-content;
-      display: flex;
-      flex-direction: column;
-    }
-    
-     
-    .nav a {
-       
-      font-size: 17px;
-    
-    }
-    #logo {
-      width: 80px;
-      height: 50px;
-      padding-right: 10px;
-    }
-    #name {
-      font-size: 20px;
-    
-    }
-    #login {
-      width: 100px;
-      height: 40px;
-      font-size: 15px;
-     
-    }
+  #login {
+    display: none;
   }
+  #burgerbtn {
+    display: block;
+  }
+  .menu-list.active {
+    right: 0px;
+  }
+  #burgerbtn {
+    font-size: 20px;
+  }
+
+  #currentDate {
+    font-size: 30px;
+    margin: 20px;
+    position: relative;
+    left: calc(100% - 200px);
+    margin: 0;
+  }
+  #currentTime {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px;
+    position: relative;
+    left: calc(100% - 195px);
+    margin: 0;
+    z-index: 133333333333333333;
+  }
+
+  .count-set {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+
+  }
+  .count {
+    width: 300px;
+    height: 170px;
+
+    border-radius: 20px;
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  #number {
+    margin-top: 15px;
+    font-size: 20px;
+  }
+  table,
+  th,
+  td {
+    border-collapse: collapse;
+  }
+  table {
+    width: 100%;
+    height: auto;
+
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  th {
+    width: auto;
+    height: 30px;
+    font-size: 10px;
+  }
+  tr {
+    width: auto;
+    height: 40px;
+  }
+  .table {
+    width: calc(100% - 20px);
+    height: auto;
+    text-align: center;
+  }
+  .tableheader {
+    width: 100%;
+    height: 40px;
+    font-size: 13px;
+    background-color: #96ceb4;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #greet {
+    font-size: 30px;
+    display: flex;
+    flex-direction: start;
+  }
+  .dateAndGreet {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+  }
+  #DateTime {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 426px) {
+  body {
+    height: auto !important;
+  }
+  .content {
+    width: 100%;
+    display: flex;
+    padding: 0 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  main {
+    width: 100%;
+    height: 100%;
+  }
+  .nav {
+    display: none;
+  }
+  #name {
+    font-size: 25px;
+  }
+  #login {
+    display: none;
+  }
+  #burgerbtn {
+    display: block;
+  }
+  .menu-list.active {
+    right: 0px;
+  }
+  #burgerbtn {
+    font-size: 20px;
+  }
+
+  #currentDate {
+    font-size: 30px;
+    margin: 20px;
+    position: relative;
+    left: calc(100% - 160px);
+    margin: 0;
+  }
+  #currentTime {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px;
+    position: relative;
+    left: calc(100% - 140px);
+    margin: 0;
+    z-index: 133333333333333333;
+  }
+
+  .count-set {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+
+  }
+  .count {
+    width: 350px;
+    height: 170px;
+
+    border-radius: 20px;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  #number {
+    margin-top: 15px;
+    font-size: 25px;
+  }
+  table,
+  th,
+  td {
+    border-collapse: collapse;
+  }
+  table {
+    width: 100%;
+    height: auto;
+
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  th {
+    width: auto;
+    height: 30px;
+    font-size: 10px;
+  }
+  tr {
+    width: auto;
+    height: 40px;
+  }
+  .table {
+    width: calc(100% - 20px);
+    height: auto;
+    text-align: center;
+  }
+  .tableheader {
+    width: 100%;
+    height: 40px;
+    font-size: 13px;
+    background-color: #96ceb4;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #greet {
+    font-size: 35px;
+    display: flex;
+    flex-direction: start;
+  }
+  .dateAndGreet {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+  }
+  #DateTime {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 426px) and (max-width: 769px) {
+  .content {
+    width: 100%;
+    display: flex;
+    padding: 0 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+  body {
+    height: auto !important;
+  }
+  main {
+    width: 100%;
+    height: 100%;
+  }
+  .nav {
+    display: none;
+  }
+  #name {
+    font-size: 25px;
+  }
+  #login {
+    display: none;
+  }
+  #burgerbtn {
+    display: block;
+  }
+  .menu-list.active {
+    right: 0px;
+  }
+  #burgerbtn {
+    font-size: 20px;
+  }
+
+  #currentDate {
+    font-size: 35px;
+    margin: 20px;
+    position: relative;
+    left: calc(100% - 180px);
+    margin: 0;
+  }
+  #currentTime {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 20px;
+    position: relative;
+    left: calc(100% - 160px);
+    margin: 0;
+    z-index: 133333333333333333;
+  }
+
+  .count-set {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+
+  }
+  .count {
+    width: 240px;
+    height: 150px;
+    margin: auto;
+    border-radius: 20px;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  #number {
+    margin-top: 15px;
+    font-size: 25px;
+  }
+  table,
+  th,
+  td {
+    border-collapse: collapse;
+  }
+  table {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  th {
+    width: auto;
+    height: 30px;
+    font-size: 10px;
+  }
+  tr {
+    width: auto;
+    height: 40px;
+  }
+  .table {
+    width: calc(100% - 20px);
+    height: auto;
+    text-align: center;
+    padding: 10px;
+  }
+  .tableheader {
+    width: 100%;
+    height: 40px;
+    font-size: 13px;
+    background-color: #96ceb4;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #greet {
+    font-size: 40px;
+    display: flex;
+    flex-direction: start;
+  }
+  .dateAndGreet {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+  }
+  #DateTime {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  body {
+    height: auto !important;
+  }
+  main {
+    width: 100%;
+    height: 100%;
+  }
+
+  #currentDate {
+    font-size: 35px;
+    margin: 20px;
+    position: relative;
+    left: calc(100% - 180px);
+    margin: 0;
+  }
+  #currentTime {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 20px;
+    position: relative;
+    left: calc(100% - 160px);
+    margin: 0;
+    z-index: 133333333333333333;
+  }
+
+  .count-set {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+
+  }
+  .count {
+    width: 240px;
+    height: 150px;
+    margin: auto;
+    border-radius: 20px;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  #number {
+    margin-top: 15px;
+    font-size: 25px;
+  }
+  table,
+  th,
+  td {
+    border-collapse: collapse;
+  }
+  table {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  th {
+    width: auto;
+    height: 30px;
+    font-size: 10px;
+  }
+  tr {
+    width: auto;
+    height: 40px;
+  }
+  .table {
+    width: calc(100% - 20px);
+    height: auto;
+    text-align: center;
+    padding: 10px;
+  }
+  .tableheader {
+    width: 100%;
+    height: 40px;
+    font-size: 13px;
+    background-color: #96ceb4;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #greet {
+    font-size: 40px;
+    display: flex;
+    flex-direction: start;
+  }
+  .dateAndGreet {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+  }
+  #DateTime {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav a {
+    font-size: 17px;
+  }
+  #logo {
+    width: 80px;
+    height: 50px;
+    padding-right: 10px;
+  }
+  #name {
+    font-size: 20px;
+  }
+  #login {
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  body {
+    height: auto !important;
+  }
+  main {
+    width: 100%;
+    height: 100%;
+  }
+
+  #currentDate {
+    font-size: 35px;
+    margin: 20px;
+    position: relative;
+    left: calc(100% - 180px);
+    margin: 0;
+  }
+  #currentTime {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 20px;
+    position: relative;
+    left: calc(100% - 160px);
+    margin: 0;
+    z-index: 133333333333333333;
+  }
+
+  .count-set {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+
+  }
+  .count {
+    width: 240px;
+    height: 150px;
+    margin: auto;
+    border-radius: 20px;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  #number {
+    margin-top: 15px;
+    font-size: 25px;
+  }
+  table,
+  th,
+  td {
+    border-collapse: collapse;
+  }
+  table {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  th {
+    width: auto;
+    height: 30px;
+    font-size: 10px;
+  }
+  tr {
+    width: auto;
+    height: 40px;
+  }
+  .table {
+    width: calc(100% - 20px);
+    height: auto;
+    text-align: center;
+    padding: 10px;
+  }
+  .tableheader {
+    width: 100%;
+    height: 40px;
+    font-size: 13px;
+    background-color: #96ceb4;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #greet {
+    font-size: 40px;
+    display: flex;
+    flex-direction: start;
+  }
+  .dateAndGreet {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+  }
+  #DateTime {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav a {
+    font-size: 17px;
+  }
+  #logo {
+    width: 80px;
+    height: 50px;
+    padding-right: 10px;
+  }
+  #name {
+    font-size: 20px;
+  }
+  #login {
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+  }
+}
