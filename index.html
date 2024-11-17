@@ -8,6 +8,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="/CSS/style.css" />
     <link rel="stylesheet" href="/CSS/index.css" />
     <link rel="stylesheet" href="/CSS/page.css" />
@@ -25,10 +26,10 @@
           <div id="name">POS System</div>
         </div>
         <nav class="nav">
-          <a href="#home">Home</a>
-          <a href="#customers">Customers</a>
-          <a href="#stores">Store</a>
-          <a href="#orders">Orders</a>
+          <button data-page="home">Home</button>
+          <button data-page="customers">Customers</button>
+          <button data-page="stores">Store</button>
+          <button data-page="orders">Orders</button>
         </nav>
         <i class="fa fa-bars burger" id="burgerbtn" aria-hidden="true"></i>
       </div>
@@ -42,10 +43,10 @@
         <button class="closebtn" id="closeBtn">&times;</button>
         <nav class="menu">
           <ul>
-            <a href="#home">Home</a>
-            <a href="#customers">Customers</a>
-            <a href="#stores">Store</a>
-            <a href="#orders">Orders</a>
+            <button data-page="home">Home</button>
+            <button data-page="customers">Customers</button>
+            <button data-page="stores">Store</button>
+            <button data-page="orders">Orders</button>
             <li><button id="login">sign up</button></li>
             <li><button id="login">log out</button></li>
           </ul>
@@ -53,206 +54,37 @@
       </div>
     </header>
     <main>
-      <article id="loader">
-        <section id="home">
-          <div class="dateAndGreet">
-            <div id="greet">Have a nice day !!</div>
-            <div id="DateTime">
-              <span id="currentDate"></span>
-              <span id="currentTime"></span>
-            </div>
+      <section id="home" class="page active">
+        <div class="dateAndGreet">
+          <div id="greet">Have a nice day !!</div>
+          <div id="DateTime">
+            <span id="currentDate"></span>
+            <span id="currentTime"></span>
           </div>
+        </div>
 
-          <div class="count-set">
-            <div class="count">
-              <span>Customer</span><span>Count </span
-              ><span id="number">09</span>
-            </div>
-            <div class="count">
-              <span>Item</span><span>Count </span><span id="number">11</span>
-            </div>
-            <div class="count">
-              <span>Today</span><span>Sales </span><span id="number">13</span>
-            </div>
+        <div class="count-set">
+          <div class="count">
+            <span>Customer</span><span>Count </span><span id="number">09</span>
           </div>
-          <div class="table">
-            <div class="tableheader">Recent Orders</div>
-            <div class="tableContent">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Order ID</th>
-                    <th>Customer Name</th>
-                    <th>Item Name</th>
-                    <th>Item QTY</th>
-                    <th>Total Price</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>25</td>
-                    <td>1234567890</td>
-                    <td></td>
-                  </tr>
-
-                  <tr>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>25</td>
-                    <td>1234567890</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>Jane</td>
-                    <td>Doe</td>
-                    <td></td>
-                    <td>1234567890</td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+          <div class="count">
+            <span>Item</span><span>Count </span><span id="number">11</span>
           </div>
-        </section>
-      </article>
-      <article id="loader">
-        <section id="customers">
-          <div class="rectangle">
-            <div id="pageName">
-              <span id="Cusicon"><i class="fa-solid fa-users"></i></span
-              >Customer-Manage
-            </div>
-            <div class="box">
-              <label for="CustomerID">Customer ID :</label>
-              <input type="text" />
-            </div>
-            <div class="box">
-              <label for="CustomerNmae">Customer Name :</label>
-              <input type="text" />
-            </div>
-            <div class="box">
-              <label for="CustomerAddress">Customer Address :</label>
-              <input type="text" />
-            </div>
-            <div class="box">
-              <label for="CustomerTelNo">Customer TelNo :</label>
-              <input type="TelNo" />
-            </div>
-            <div class="CusButton">
-              <button class="btn" id="save">
-                <span id="btnicon"><i class="fa-solid fa-user"></i></span>Save
-              </button>
-              <button class="btn" id="update">
-                <span id="btnicon"
-                  ><i class="fa-solid fa-pen-to-square"></i></span
-                >Update
-              </button>
-              <button class="btn" id="search">
-                <span id="btnicon"
-                  ><i class="fa-solid fa-magnifying-glass"></i></span
-                >Search
-              </button>
-              <button class="btn" id="delete">
-                <span id="btnicon"><i class="fa-solid fa-trash-can"></i></span
-                >Delete
-              </button>
-              <button class="btn" id="getAll">
-                <span id="btnicon"><i class="fa-solid fa-reply-all"></i></span
-                >All
-              </button>
-              <button class="btn" id="clear">
-                <span id="btnicon"
-                  ><i class="fa-solid fa-circle-check"></i></span
-                >Clear
-              </button>
-            </div>
+          <div class="count">
+            <span>Today</span><span>Sales </span><span id="number">13</span>
+          </div>
+        </div>
+        <div class="table">
+          <div class="tableheader">Recent Orders</div>
+          <div class="tableContent">
             <table>
               <thead>
                 <tr>
-                  <th>Customer ID</th>
+                  <th>Order ID</th>
                   <th>Customer Name</th>
-                  <th>Cus Address</th>
-                  <th>Customer TelNo</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-      </article>
-      <article id="loader">
-        <section id="stores">
-          <div class="rectangle">
-            <div id="pageName">
-              <span id="Itemicon"><i class="fa-solid fa-cart-flatbed"></i></span
-              >Store-Manage
-            </div>
-            <div class="box">
-              <label for="ItemCode">Item Code :</label>
-              <input type="text" />
-            </div>
-            <div class="box">
-              <label for="ItemNmae">Item Name :</label>
-              <input type="text" />
-            </div>
-            <div class="box">
-              <label for="ItemPrice">Item Price :</label>
-              <input type="text" />
-            </div>
-            <div class="box">
-              <label for="ItemQTY">Item QTY :</label>
-              <input type="TelNo" />
-            </div>
-            <div class="CusButton">
-              <button class="btn" id="save">
-                <span id="btnicon"><i class="fa-solid fa-user"></i></span>Save
-              </button>
-              <button class="btn" id="update">
-                <span id="btnicon"
-                  ><i class="fa-solid fa-pen-to-square"></i></span
-                >Update
-              </button>
-              <button class="btn" id="search">
-                <span id="btnicon"
-                  ><i class="fa-solid fa-magnifying-glass"></i></span
-                >Search
-              </button>
-              <button class="btn" id="delete">
-                <span id="btnicon"><i class="fa-solid fa-trash-can"></i></span
-                >Delete
-              </button>
-              <button class="btn" id="getAll">
-                <span id="btnicon"><i class="fa-solid fa-reply-all"></i></span
-                >All
-              </button>
-              <button class="btn" id="clear">
-                <span id="btnicon"
-                  ><i class="fa-solid fa-circle-check"></i></span
-                >Clear
-              </button>
-            </div>
-            <table>
-              <thead>
-                <tr>
-                  <th>Item Code</th>
                   <th>Item Name</th>
-                  <th>Item Price</th>
                   <th>Item QTY</th>
+                  <th>Total Price</th>
                 </tr>
               </thead>
               <tbody>
@@ -261,164 +93,334 @@
                   <td>Doe</td>
                   <td>25</td>
                   <td>1234567890</td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>John</td>
+                  <td>Doe</td>
+                  <td>25</td>
+                  <td>1234567890</td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>Jane</td>
                   <td>Doe</td>
                   <td></td>
                   <td>1234567890</td>
+                  <td></td>
                 </tr>
               </tbody>
             </table>
           </div>
-        </section>
-      </article>
-      <article id="loader">
-        <section id="orders">
-          <div class="squares">
-            <div class="square-01">
-              <div id="topic">Invoise Manage</div>
-              <div class="box-set">
-                <div class="box-set-1">
-                  <div class="box">
-                    <label for="OrderID">Order ID :</label>
-                    <input type="text" />
-                  </div>
-                  <div class="box">
-                    <label for="Customer">Customer :</label>
-                    <select name="technology" id="cusid">
-                      <option value=""></option>
-                      <option value=""></option>
-                      <option value=""></option>
-                    </select>
-                  </div>
-                  <div class="box">
-                    <label for="CustomerNmae">Customer Name :</label>
-                    <input type="text" />
-                  </div>
-                </div>
-                <div class="box-set-2">
-                  <div class="box">
-                    <label for="Date">Date :</label>
-                    <input type="text" />
-                  </div>
-                  <div class="box">
-                    <label for="CustomerID">Customer ID :</label>
-                    <input type="text" />
-                  </div>
-                  <div class="box">
-                    <label for="Salary">Customer Salary :</label>
-                    <input type="text" />
-                  </div>
-                </div>
-              </div>
-              <div class="box">
-                <label for="CustomerID">Customer ID :</label>
-                <input type="text" />
-              </div>
-            </div>
-            <div class="square-02">
-              <div id="topic">Item Select</div>
-              <div class="box-set">
-                <div class="box-set-1">
-                  <div class="box">
-                    <label for="Item">Item :</label>
-                    <select name="technology" id="cusid">
-                      <option value="java"></option>
-                      <option value="mySQL"></option>
-                      <option value="HTML"></option>
-                    </select>
-                  </div>
-                  <div class="box">
-                    <label for="ItemCode">Item Code :</label>
-                    <input type="text" />
-                  </div>
+        </div>
+      </section>
 
-                  <div class="box">
-                    <label for="ItemName">Item Name :</label>
-                    <input type="text" />
-                  </div>
-                </div>
-                <div class="box-set-2">
-                  <div class="box">
-                    <label for="Price">Price :</label>
-                    <input type="text" />
-                  </div>
-                  <div class="box">
-                    <label for="QtyOnHand">Qty On Hand :</label>
-                    <input type="text" />
-                  </div>
-                  <div class="box">
-                    <label for="Order QTY">Order QTY :</label>
-                    <input type="text" />
-                  </div>
-                </div>
-              </div>
-              <button class="squarebtn AddItem" id="AddItem">
+      <section id="customers" class="page">
+        <div class="rectangle">
+          <div id="pageName">
+            <span id="Cusicon"><i class="fa-solid fa-users"></i></span
+            >Customer-Manage
+          </div>
+
+          <form action="customerForm">
+            <div class="box">
+              <label for="CustomerID">Customer ID :</label>
+              <input type="text" id="CustomerID" placeholder="CustomerId" />
+            </div>
+            <div class="box">
+              <label for="CustomerName">Customer Name :</label>
+              <input type="text" id="CustomerName" placeholder="CustomerName" />
+            </div>
+            <div class="box">
+              <label for="CustomerAddress">Customer Address :</label>
+              <input
+                type="text"
+                id="CustomerAddress"
+                placeholder="CustomerAddress"
+              />
+            </div>
+            <div class="box">
+              <label for="CustomerTelNo">Customer TelNo :</label>
+              <input
+                type="TelNo"
+                id="CustomerTelNo"
+                placeholder="CustomerTelNo"
+              />
+            </div>
+            <div class="CusButton">
+              <button class="btn" id="save">
+                <span id="btnicon"><i class="fa-solid fa-user"></i></span>Save
+              </button>
+              <button class="btn" id="update">
+                <span id="btnicon"
+                  ><i class="fa-solid fa-pen-to-square"></i></span
+                >Update
+              </button>
+              <button class="btn" id="search">
+                <span id="btnicon"
+                  ><i class="fa-solid fa-magnifying-glass"></i></span
+                >Search
+              </button>
+              <button class="btn" id="delete">
+                <span id="btnicon"><i class="fa-solid fa-trash-can"></i></span
+                >Delete
+              </button>
+              <button class="btn" id="getAll">
+                <span id="btnicon"><i class="fa-solid fa-reply-all"></i></span
+                >All
+              </button>
+              <button class="btn" id="clear">
                 <span id="btnicon"
                   ><i class="fa-solid fa-circle-check"></i></span
-                >AddItem
+                >Clear
               </button>
             </div>
-            <div class="square-03">
-              <div class="box">
-                <label for="Total">TOTAL PRICE ::</label>
-                <input type="text" />
-              </div>
-              <div class="box">
-                <label for="SubTotal">SUB TOTAL PRICE :</label>
-                <input type="text" />
-              </div>
-              <div class="Smallbox-set">
-                <div class="Smallbox">
-                  <label for="Cash"> CASH :</label>
+          </form>
+
+          <table id="customerTable">
+            <thead>
+              <tr>
+                <th>CustomerID</th>
+                <th>CustomerName</th>
+                <th>CustomerAddress</th>
+                <th>CustomerTelNo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr> -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="stores" class="page">
+        <div class="rectangle">
+          <div id="pageName">
+            <span id="Itemicon"><i class="fa-solid fa-cart-flatbed"></i></span
+            >Store-Manage
+          </div>
+          <div class="box">
+            <label for="ItemCode">Item Code :</label>
+            <input type="text" />
+          </div>
+          <div class="box">
+            <label for="ItemNmae">Item Name :</label>
+            <input type="text" />
+          </div>
+          <div class="box">
+            <label for="ItemPrice">Item Price :</label>
+            <input type="text" />
+          </div>
+          <div class="box">
+            <label for="ItemQTY">Item QTY :</label>
+            <input type="TelNo" />
+          </div>
+          <div class="CusButton">
+            <button class="btn" id="save">
+              <span id="btnicon"><i class="fa-solid fa-user"></i></span>Save
+            </button>
+            <button class="btn" id="update">
+              <span id="btnicon"><i class="fa-solid fa-pen-to-square"></i></span
+              >Update
+            </button>
+            <button class="btn" id="search">
+              <span id="btnicon"
+                ><i class="fa-solid fa-magnifying-glass"></i></span
+              >Search
+            </button>
+            <button class="btn" id="delete">
+              <span id="btnicon"><i class="fa-solid fa-trash-can"></i></span
+              >Delete
+            </button>
+            <button class="btn" id="getAll">
+              <span id="btnicon"><i class="fa-solid fa-reply-all"></i></span>All
+            </button>
+            <button class="btn" id="clear">
+              <span id="btnicon"><i class="fa-solid fa-circle-check"></i></span
+              >Clear
+            </button>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Item Code</th>
+                <th>Item Name</th>
+                <th>Item Price</th>
+                <th>Item QTY</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>25</td>
+                <td>1234567890</td>
+              </tr>
+              <tr>
+                <td>Jane</td>
+                <td>Doe</td>
+                <td></td>
+                <td>1234567890</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="orders" class="page">
+        <div class="squares">
+          <div class="square-01">
+            <div id="topic">Invoise Manage</div>
+            <div class="box-set">
+              <div class="box-set-1">
+                <div class="box">
+                  <label for="OrderID">Order ID :</label>
                   <input type="text" />
                 </div>
-                <div class="Smallbox">
-                  <label for="Discount">DISCOUNT :</label>
-                  <input type="text" />
+                <div class="box">
+                  <label for="Customer">Customer :</label>
+                  <select name="technology" id="cusid">
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                  </select>
                 </div>
-                <div class="Smallbox">
-                  <label for="Balance">BALANCE :</label>
+                <div class="box">
+                  <label for="CustomerNmae">Customer Name :</label>
                   <input type="text" />
                 </div>
               </div>
-              <button class="squarebtn purchase" id="purchase">
-                <span id="btnicon"
-                  ><i class="fa-solid fa-circle-check"></i></span
-                >Purchase
-              </button>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Item Code</th>
-                    <th>Item Name</th>
-                    <th>Price</th>
-                    <th>QTY</th>
-                    <th>Total</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>John</td>
-                    <td>biscult</td>
-                    <td>25.00</td>
-                    <td>1</td>
-                    <td>230.00</td>
-                  </tr>
-                  <tr>
-                    <td>Jane</td>
-                    <td>biscult</td>
-                    <td>30.00</td>
-                    <td>3</td>
-                    <td>200.00</td>
-                  </tr>
-                </tbody>
-              </table>
+              <div class="box-set-2">
+                <div class="box">
+                  <label for="Date">Date :</label>
+                  <input type="text" />
+                </div>
+                <div class="box">
+                  <label for="CustomerID">Customer ID :</label>
+                  <input type="text" />
+                </div>
+                <div class="box">
+                  <label for="Salary">Customer Salary :</label>
+                  <input type="text" />
+                </div>
+              </div>
+            </div>
+            <div class="box">
+              <label for="CustomerID">Customer ID :</label>
+              <input type="text" />
             </div>
           </div>
-        </section>
-      </article>
+          <div class="square-02">
+            <div id="topic">Item Select</div>
+            <div class="box-set">
+              <div class="box-set-1">
+                <div class="box">
+                  <label for="Item">Item :</label>
+                  <select name="technology" id="cusid">
+                    <option value="java"></option>
+                    <option value="mySQL"></option>
+                    <option value="HTML"></option>
+                  </select>
+                </div>
+                <div class="box">
+                  <label for="ItemCode">Item Code :</label>
+                  <input type="text" />
+                </div>
+
+                <div class="box">
+                  <label for="ItemName">Item Name :</label>
+                  <input type="text" />
+                </div>
+              </div>
+              <div class="box-set-2">
+                <div class="box">
+                  <label for="Price">Price :</label>
+                  <input type="text" />
+                </div>
+                <div class="box">
+                  <label for="QtyOnHand">Qty On Hand :</label>
+                  <input type="text" />
+                </div>
+                <div class="box">
+                  <label for="Order QTY">Order QTY :</label>
+                  <input type="text" />
+                </div>
+              </div>
+            </div>
+            <button class="squarebtn AddItem" id="AddItem">
+              <span id="btnicon"><i class="fa-solid fa-circle-check"></i></span
+              >AddItem
+            </button>
+          </div>
+          <div class="square-03">
+            <div class="box">
+              <label for="Total">TOTAL PRICE ::</label>
+              <input type="text" />
+            </div>
+            <div class="box">
+              <label for="SubTotal">SUB TOTAL PRICE :</label>
+              <input type="text" />
+            </div>
+            <div class="Smallbox-set">
+              <div class="Smallbox">
+                <label for="Cash"> CASH :</label>
+                <input type="text" />
+              </div>
+              <div class="Smallbox">
+                <label for="Discount">DISCOUNT :</label>
+                <input type="text" />
+              </div>
+              <div class="Smallbox">
+                <label for="Balance">BALANCE :</label>
+                <input type="text" />
+              </div>
+            </div>
+            <button class="squarebtn purchase" id="purchase">
+              <span id="btnicon"><i class="fa-solid fa-circle-check"></i></span
+              >Purchase
+            </button>
+            <table>
+              <thead>
+                <tr>
+                  <th>Item Code</th>
+                  <th>Item Name</th>
+                  <th>Price</th>
+                  <th>QTY</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>John</td>
+                  <td>biscult</td>
+                  <td>25.00</td>
+                  <td>1</td>
+                  <td>230.00</td>
+                </tr>
+                <tr>
+                  <td>Jane</td>
+                  <td>biscult</td>
+                  <td>30.00</td>
+                  <td>3</td>
+                  <td>200.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
     </main>
     <script>
       const today = new Date();
@@ -435,6 +437,9 @@
 
       setInterval(updateTime, 1000);
     </script>
+
     <script src="/js/index.js"></script>
+    <script src="/util/navigation.js"></script>
+    <script src="/controller/CustomerController.js"></script>
   </body>
 </html>
