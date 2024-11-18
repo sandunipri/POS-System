@@ -123,7 +123,7 @@
             >Customer-Manage
           </div>
 
-          <form action="customerForm">
+          <form id="customerForm">
             <div class="box">
               <label for="CustomerID">Customer ID :</label>
               <input type="text" id="CustomerID" placeholder="CustomerId" />
@@ -149,7 +149,7 @@
               />
             </div>
             <div class="CusButton">
-              <button class="btn" id="save">
+              <button class="btn" id="saveCustomer" type="button">
                 <span id="btnicon"><i class="fa-solid fa-user"></i></span>Save
               </button>
               <button class="btn" id="update">
@@ -187,20 +187,7 @@
                 <th>CustomerTelNo</th>
               </tr>
             </thead>
-            <tbody>
-              <!-- <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr> -->
-            </tbody>
+            <tbody></tbody>
           </table>
         </div>
       </section>
@@ -441,5 +428,7 @@
     <script src="/js/index.js"></script>
     <script src="/util/navigation.js"></script>
     <script src="/controller/CustomerController.js"></script>
+    <script src="/model/customerModel.js"></script>
+    <script src="/DB/db.js"></script>
   </body>
 </html>

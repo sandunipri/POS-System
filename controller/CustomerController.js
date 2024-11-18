@@ -1,98 +1,57 @@
-import CustomerModel from "../model/customerModel.js";
+import { Customer } from "../model/customerModel.js";
+import { customerDB } from "../DB/db.js";
 
-// DOM Elements
-const customerTableBody = document.querySelector("#customerTable tbody");
-const customerForm = document.forms['customerForm'];
-const saveBtn = document.getElementById("save");
-const updateBtn = document.getElementById("update");
-const searchBtn = document.getElementById("search");
-const deleteBtn = document.getElementById("delete");
-const getAllBtn = document.getElementById("getAll");
-const clearBtn = document.getElementById("clear");
+$(document).ready(function () {
+  // Save Customer Event
+  $("#saveCustomer").click(function () {
+    // Get input values
+    const customerID = $("#customerID").val().trim();
+    const customerName = $("#customerName").val().trim();
+    const customerAddress = $("#customerAddress").val().trim();
+    const customerTelNo = $("#customerTelNo").val().trim();
 
-// Helper functions for rendering
-const renderCustomerTable = (customers) => {
-  customerTableBody.innerHTML = ""; // Clear existing rows
-  customers.forEach(customer => {
-    const row = document.createElement("tr");
-    row.innerHTML = `
-      <td>${customer.id}</td>
-      <td>${customer.name}</td>
-      <td>${customer.address}</td>
-      <td>${customer.telNo}</td>
-    `;
-    customerTableBody.appendChild(row);
+    // Validate inputs
+    if (!customerID || !customerName || !customerAddress || !customerTelNo) {
+      alert("All fields are required!");
+      return;
+    }
+
+    // Create a new customer
+    const newCustomer = new Customer(
+      customerID,
+      customerName,
+      customerAddress,
+      customerTelNo
+    );
+
+    // Add to DB
+    customerDB.addCustomer(newCustomer);
+
+    // Append to table
+    appendCustomerToTable(newCustomer);
+
+    // Clear form
+    $("#customerForm")[0].reset();
   });
-};
 
-const clearForm = () => {
-  customerForm.reset();
-};
-
-// Event Listeners
-saveBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  const id = document.getElementById("CustomerID").value;
-  const name = document.getElementById("CustomerName").value;
-  const address = document.getElementById("CustomerAddress").value;
-  const telNo = document.getElementById("CustomerTelNo").value;
-
-  if (id && name && address && telNo) {
-    CustomerModel.add(id, name, address, telNo);
-    renderCustomerTable(CustomerModel.getAll());
-    clearForm();
-  } else {
-    alert("Please fill in all fields.");
+  // Append Customer to Table
+  function appendCustomerToTable(customer) {
+    $("#customerTable tbody").append(`
+      <tr>
+        <td>${customer.id}</td>
+        <td>${customer.name}</td>
+        <td>${customer.address}</td>
+        <td>${customer.telNo}</td>
+      </tr>
+    `);
   }
-});
 
-updateBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  const id = document.getElementById("CustomerID").value;
-  const name = document.getElementById("CustomerName").value;
-  const address = document.getElementById("CustomerAddress").value;
-  const telNo = document.getElementById("CustomerTelNo").value;
-
-  const updatedCustomer = CustomerModel.update(id, name, address, telNo);
-  if (updatedCustomer) {
-    renderCustomerTable(CustomerModel.getAll());
-    clearForm();
-  } else {
-    alert("Customer not found.");
+  // Render Existing Customers
+  function renderCustomerTable() {
+    const customers = customerDB.getAllCustomers();
+    customers.forEach((customer) => appendCustomerToTable(customer));
   }
-});
 
-deleteBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  const id = document.getElementById("CustomerID").value;
-  const success = CustomerModel.delete(id);
-  if (success) {
-    renderCustomerTable(CustomerModel.getAll());
-    clearForm();
-  } else {
-    alert("Customer not found.");
-  }
-});
-
-searchBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  const id = document.getElementById("CustomerID").value;
-  const customer = CustomerModel.search(id);
-  if (customer) {
-    document.getElementById("CustomerName").value = customer.name;
-    document.getElementById("CustomerAddress").value = customer.address;
-    document.getElementById("CustomerTelNo").value = customer.telNo;
-  } else {
-    alert("Customer not found.");
-  }
-});
-
-getAllBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  renderCustomerTable(CustomerModel.getAll());
-});
-
-clearBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  clearForm();
+  // Initial Table Render
+  renderCustomerTable();
 });
